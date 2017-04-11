@@ -6,32 +6,20 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="logic.js"></script>
     <style type="text/css" src="Styles.css"></style>
-    <style>
-        body {
-            background-image: url("images/RED_or_BLACK_Mobile_bg.jpg");
-            /*max-width:initial;*/
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: top center;
-            /*width:100%;
-            height:auto;
-            position:fixed;*/
-        }
-
-        @media (min-width: 600px) {
-            body {
-                background-image: url("images/RED_or_BLACK_PC_bg.jpg");
-            }
-        }
-    </style>
+    <link href="Styles.css" rel="stylesheet" />
     <title>Red or Black</title>
 </head>
 
 <body>
     <div class="mainDiv">
-        <!--<input type="button" class="clrBtn" id="redBtn" name="red" value="red" />
-        <input type="button" class="clrBtn" id="blackBtn" name="black" value="black" />
-        <input type="text" id="clr" name="name" value="" />-->
+        <img src="images/autoplay.png" alt="Autoplay" id="autoPlay" />
+        <img src="images/lives_02.png" alt="Lives" id="lives" />
+        <img src="images/info.png" alt="information" id="inf" />
+
+        <img src="images/RED_or_BLACK_Mobile_bg.jpg" id="main" />
+        <img class="clrBtn" id="redBtn" src="images/Red_idle.png" alt="red button" />
+        <img class="clrBtn" id="blackBtn" src="images/Black_idle.png" alt="black button" />
+
     </div>
 </body>
 </html>

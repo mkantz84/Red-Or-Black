@@ -1,6 +1,88 @@
 ﻿
-.mainDiv {
-    background-image: url("images/RED_or_BLACK_Mobile_bg.jpg");
-    max-width: 100%;
-    height: auto;
+@media only screen {
+
+    #autoPlay {
+        width: 20%;
+        right: 0;
+        position: absolute;
+    }
+
+    #lives {
+        width: 20%;
+        right: 25%;
+        top: 12px;
+        position: absolute;
+    }
+
+    #inf {
+        width: 15%;
+        right: 42%;
+        top: 7px;
+        position: absolute;
+    }
+
+    .mainDiv {
+        float: left;
+        position: relative;
+        background-color: black;
+    }
+
+    #main {
+        width: 100%;
+        vertical-align: bottom;
+        padding-top: 20%;
+    }
+
+    .clrBtn {
+        width: 25%;
+        bottom: 3%;
+        position: absolute;
+    }
+
+    #redBtn {
+        left: 5%;
+    }
+
+    #blackBtn {
+        right: 5%;
+    }
+}
+
+@media (min-width: 480px) {
+    #main {
+        content: url("images/RED_or_BLACK_PC_bg.jpg");
+        padding-top:inherit;
+    }
+
+    .clrBtn {
+        width: 7%;
+    }
+
+    #redBtn {
+        left: 37%;
+    }
+
+    #blackBtn {
+        right: 37%;
+    }
+
+    #autoPlay {
+        width: 4%;
+        bottom: 1px;
+        right: 30%;
+    }
+
+    #lives {
+        width: 5%;
+        right: 66%;
+        top: 91%;
+        position: absolute;
+    }
+
+    #inf {
+        width: 3%;
+        right: 71%;
+        top: 91%;
+        position: absolute;
+    }
 }
