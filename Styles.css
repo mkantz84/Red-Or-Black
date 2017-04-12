@@ -23,6 +23,7 @@
 
     .mainDiv {
         float: left;
+        z-index:1;
         position: relative;
         background-color: black;
     }
@@ -36,6 +37,7 @@
     .clrBtn {
         width: 25%;
         bottom: 3%;
+        z-index:1;
         position: absolute;
     }
 
@@ -46,12 +48,37 @@
     #blackBtn {
         right: 5%;
     }
+
+    #selectedCard {
+        width: 22%;
+        right: 28%;
+        bottom: 0;
+        position: absolute;
+        visibility: hidden;
+        transform-style: preserve-3d;
+        transition: all 0.4s linear;
+    }
+
+    #result {
+        width: 22%;
+        right: 28%;
+        bottom: 0;
+        position: absolute;
+        display: none;
+    }
+    #level{
+        width:100%;
+        bottom:0;
+        z-index:0;
+        position:absolute;
+        display:none;
+    }
 }
 
 @media (min-width: 480px) {
     #main {
         content: url("images/RED_or_BLACK_PC_bg.jpg");
-        padding-top:inherit;
+        padding-top: inherit;
     }
 
     .clrBtn {
@@ -84,5 +111,15 @@
         right: 71%;
         top: 91%;
         position: absolute;
+    }
+
+    #selectedCard {
+        width: 6.5%;
+        right: 43.5%;
+    }
+
+    #result {
+        width: 6.5%;
+        right: 43.5%;
     }
 }
