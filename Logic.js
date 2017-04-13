@@ -9,7 +9,9 @@ var cards =
      "Card_Red_04.png", "Card_Red_05.png", "Card_Red_06.png"];
 
 $(document).ready(function () {
-
+    $('.loader').delay(500).fadeTo(0, 1, function () {
+        $('.loader').hide();
+    });
     $('.clrBtn').bind("mouseup touchend", (function () {
         $('#selectedCard').attr("src", "");
         $('#result').attr("src", "").hide();
