@@ -9,27 +9,44 @@ var cards =
      "Card_Red_04.png", "Card_Red_05.png", "Card_Red_06.png"];
 
 $(document).ready(function () {
-    $('.clrBtn').on("click", function () {
+
+    $('.clrBtn').bind("mouseup touchend", (function () {
         $('#selectedCard').attr("src", "");
         $('#result').attr("src", "").hide();
         $('#card_container').show();
         card = cards[Math.floor(Math.random() * cards.length)];
         $('#selectedCard').attr("src", "images/cards/" + card);
         $('#selectedCard').css("visibility", "visible");
-    });
-    $('#redBtn').on("click", function () {
-        GameLogic("red");
-    });
-    $('#blackBtn').on("click", function () {
-        GameLogic("black");
-    });
-
-
-    $('.clrBtn').bind("mouseup touchend", (function () {
         $('#selectedCard').css("transform", "rotateY(360deg)");
+        $(".clrBtn").prop('disabled', true);
     }));
+
     $('.clrBtn').bind("mousedown touchstart", (function () {
         $('#selectedCard').css("transform", "");
+    }));
+
+    $('#redBtn').bind("mousedown touchstart", (function () {
+        $('#redBtn').attr("src", "images/Red_Selected.png");
+    }));
+
+    $('#redBtn').bind("mouseup touchend", (function () {
+        GameLogic("red");        
+        $('#redBtn').delay(2000).fadeTo(0, 1, function () {
+            $('#redBtn').attr('src', 'images/Red_idle.png');
+            $(".clrBtn").prop('disabled', false);
+        });
+    }));
+
+    $('#blackBtn').bind("mousedown touchstart", (function () {
+        $('#blackBtn').attr("src", "images/Black_Selected.png");
+    }));
+
+    $('#blackBtn').bind("mouseup touchend", (function () {
+        GameLogic("black");
+        $('#blackBtn').delay(2000).fadeTo(0, 1, function () {
+            $('#blackBtn').attr('src', 'images/Black_idle.png');
+            $(".clrBtn").prop('disabled', false);
+        });
     }));
 });
 
@@ -95,7 +112,7 @@ function HandleWins() {
 function HandleLives() {
     switch (lives) {
         case 1:
-            $('#lives').delay(1000).fadeTo(0,1,  function () {
+            $('#lives').delay(1000).fadeTo(0, 1, function () {
                 $('#lives').attr('src', 'images/lives_01.png');
             });
             break;

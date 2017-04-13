@@ -1,6 +1,64 @@
-﻿
-@media only screen {
+﻿/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@media only screen {
+    html, body, #mainDiv{
+        height:100%;
+    }
+    body{
+        background:#000;
+    }
     #autoPlay {
         width: 20%;
         right: 0;
@@ -22,8 +80,8 @@
     }
 
     .mainDiv {
-        float: left;
-        z-index:1;
+        /*float: left;*/
+        z-index: 1;
         position: relative;
         background-color: black;
     }
@@ -35,18 +93,18 @@
     }
 
     .clrBtn {
-        width: 25%;
-        bottom: 3%;
-        z-index:1;
+        width: 28%;
+        bottom: 1%;
+        z-index: 1;
         position: absolute;
     }
 
     #redBtn {
-        left: 5%;
+        left: 2%;
     }
 
     #blackBtn {
-        right: 5%;
+        right: 2%;
     }
 
     #selectedCard {
@@ -66,51 +124,52 @@
         position: absolute;
         display: none;
     }
-    #level{
-        width:100%;
-        bottom:0;
-        z-index:0;
-        position:absolute;
-        display:none;
+
+    #level {
+        width: 100%;
+        bottom: 0;
+        z-index: 0;
+        position: absolute;
+        display: none;
     }
 }
 
 @media (min-width: 480px) {
+    
     #main {
         content: url("images/RED_or_BLACK_PC_bg.jpg");
         padding-top: inherit;
+        bottom:0;
     }
 
     .clrBtn {
-        width: 7%;
+        width: 8%;
     }
 
     #redBtn {
-        left: 37%;
+        left: 36%;
     }
 
     #blackBtn {
-        right: 37%;
+        right: 36%;
     }
 
     #autoPlay {
         width: 4%;
         bottom: 1px;
-        right: 30%;
+        right: 30%;        
     }
 
     #lives {
         width: 5%;
         right: 66%;
         top: 91%;
-        position: absolute;
     }
 
     #inf {
         width: 3%;
         right: 71%;
         top: 91%;
-        position: absolute;
     }
 
     #selectedCard {
