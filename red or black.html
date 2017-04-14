@@ -12,26 +12,34 @@
 </head>
 
 <body>
-    <div class="loader">        
+    <img id="hlpImg" src="images/RED_or_BLACK_Mobile_Help.png" alt="Alternate Text" />
+    <div class="loader">
         <img id="ldr" src="images/3Dchip_preloader.gif" alt="loader gif" />
     </div>
+    
     <div class="mainDiv">
-        <input id="autoPlay" type="image" src="images/autoplay.png" name="name" value="" />
-        
+        <div class="end-game-modal">
+            <div id="win-lose-modal"></div>            
+        </div>
+        <h1><span>RED</span> or BLACK - Pick Your Luck!</h1>
+        <input id="autoPlay" type="image" src="images/autoplay.png" alt="auto play button" title="auto play" />
+
         <img src="images/lives_02.png" alt="Lives" id="lives" />
-        <img src="images/info.png" alt="information" id="inf" />
+        <input id="inf" type="image" name="name" value="" src="images/info.png" alt="information" title="press for help" />
 
         <img src="images/RED_or_BLACK_Mobile_bg.jpg" id="main" />
 
         <input class="clrBtn" id="redBtn" type="image" src="images/Red_idle.png" name="name" value="" />
         <input class="clrBtn" id="blackBtn" type="image" src="images/Black_idle.png" name="name" value="" />
 
-        
+
         <div id="card_container">
             <img id="selectedCard" src="" alt="Alternate Text" />
-            <img id="result" src="" alt="Alternate Text"  />
+            <img id="result" src="" alt="Alternate Text" />
         </div>
         <img id="level" src="" alt="Alternate Text" />
+        
     </div>
+    <div id="rules">[+] gsfgsd gsdgsd</div>
 </body>
 </html>

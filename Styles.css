@@ -53,74 +53,78 @@ table {
 }
 
 @media only screen {
-    html, body, #mainDiv{
-        height:100%;
-    }
-    body{
-        background:#000;
-        position:relative; 
-    }
-  #ldr{
-      width:25%;
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-  }
-    .loader {
-        background: rgba(0, 0, 0, 0.7);
-        width: 100%;
-        height: 100%;
-        z-index: 10000;
+
+    h1 {
         position: absolute;
+        color: #ffffff;
+        font: -webkit-mini-control;
+        font-weight: bold;
+        padding-top: 23%;
+        text-align: center;
+        width: 100%;
+        font-size: 4.5vw;
+    }
+
+        h1 span {
+            color: #ff0000;
+        }
+
+    html, body, #mainDiv {
+        height: 100%;
+    }
+
+    body {
+        background: #000;
+        position: relative;
     }
 
     #autoPlay {
-        width: 20%;
+        width: 18%;
         right: 0;
         position: absolute;
+        z-index: 1;
     }
 
     #lives {
         width: 20%;
-        right: 25%;
+        right: 21%;
         top: 12px;
         position: absolute;
     }
 
     #inf {
-        width: 15%;
-        right: 42%;
-        top: 7px;
+        width: 10%;
+        right: 40%;
+        top: 15px;
         position: absolute;
+        z-index: 1;
     }
 
     .mainDiv {
-        /*float: left;*/
         z-index: 1;
         position: relative;
-        background-color: black;
+        background-color: #1b1818;
     }
 
     #main {
         width: 100%;
         vertical-align: bottom;
-        padding-top: 20%;
+        padding-top: 18%;
     }
 
     .clrBtn {
         width: 28%;
-        bottom: 1%;
+        bottom: 0;
         z-index: 1;
         position: absolute;
     }
 
     #redBtn {
-        left: 2%;
+        left: 0;
     }
 
     #blackBtn {
-        right: 2%;
+        right: 0;
     }
 
     #selectedCard {
@@ -148,14 +152,57 @@ table {
         position: absolute;
         display: none;
     }
+
+    #ldr {
+        width: 25%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .loader {
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        height: 100%;
+        z-index: 10000;
+        position: absolute;
+    }
+
+    #hlpImg {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        padding-top: 18%;
+    }
+    .end-game-modal {
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        z-index: 10000;
+        position: absolute;
+        color:#ffffff;
+        height:100%;
+        text-align:center;
+        display:none;
+    }
+    #win-lose-modal{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
 }
 
 @media (min-width: 480px) {
-    
+    h1 {
+        padding-top: 2%;
+        font-size: 1.5vw;
+    }
+
     #main {
         content: url("images/RED_or_BLACK_PC_bg.jpg");
         padding-top: inherit;
-        bottom:0;
+        bottom: 0;
     }
 
     .clrBtn {
@@ -163,23 +210,23 @@ table {
     }
 
     #redBtn {
-        left: 36%;
+        left: 35.5%;
     }
 
     #blackBtn {
-        right: 36%;
+        right: 35.5%;
     }
 
     #autoPlay {
         width: 4%;
-        bottom: 1px;
-        right: 30%;        
+        bottom: 0;
+        right: 30.5%;
     }
 
     #lives {
-        width: 5%;
+        width: 4.7%;
         right: 66%;
-        top: 91%;
+        top: 91.1%;
     }
 
     #inf {
@@ -197,7 +244,13 @@ table {
         width: 6.5%;
         right: 43.5%;
     }
-    #ldr{
-        width:10%;
+
+    #ldr {
+        width: 10%;
+    }
+
+    #hlpImg {
+        content: url("images/RED_or_BLACK_PC_Help.png");
+        padding-top: initial;
     }
 }
