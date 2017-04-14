@@ -106,10 +106,19 @@ table {
         background-color: #1b1818;
     }
 
-    #main {
-        width: 100%;
+    .main-img {
         vertical-align: bottom;
         padding-top: 18%;
+        background: url(images/RED_or_BLACK_Mobile_bg.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
+    #main {
+        visibility: hidden;
+        width: 100%;
+        vertical-align: bottom;
     }
 
     .clrBtn {
@@ -175,17 +184,19 @@ table {
         z-index: 1000;
         padding-top: 18%;
     }
+
     .end-game-modal {
         background: rgba(0, 0, 0, 0.7);
         width: 100%;
         z-index: 10000;
         position: absolute;
-        color:#ffffff;
-        height:100%;
-        text-align:center;
-        display:none;
+        color: #ffffff;
+        height: 100%;
+        text-align: center;
+        display: none;
     }
-    #win-lose-modal{
+
+    #win-lose-modal {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -199,10 +210,15 @@ table {
         font-size: 1.5vw;
     }
 
+    .main-img {
+        background: url("images/RED_or_BLACK_PC_bg.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        padding-top: initial;
+    }
+
     #main {
         content: url("images/RED_or_BLACK_PC_bg.jpg");
-        padding-top: inherit;
-        bottom: 0;
     }
 
     .clrBtn {

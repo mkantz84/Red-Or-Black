@@ -1,4 +1,3 @@
-// JavaScript source code
 var clicks = 0;
 var card;
 var winCount = 1;
@@ -11,6 +10,8 @@ var cards =
      "Card_Red_04.png", "Card_Red_05.png", "Card_Red_06.png"];
 
 $(document).ready(function () {
+
+    CheckSizeAndFix();
     $('.loader').delay(500).fadeTo(0, 1, function () {
         $('.loader').hide();
     });
@@ -70,18 +71,55 @@ $(document).ready(function () {
         $('#hlpImg').toggle();
     });
 
+    $(window).resize(function () {
+        CheckSizeAndFix();
+    });
+
     $('#autoPlay').on('click', function () {
-        $('#inf').prop('disabled', true);
-        $('#autoPlay').prop('disabled', true);
-        $('#autoPlay').css('opacity', 0.7);
-        $('.clrBtn').prop('disabled', true);
-        $('#redBtn').attr('src', 'images/Red_disabled.png');
-        $('#blackBtn').attr('src', 'images/Black_disabled.png');
-        for (var i = 0; i < gameLevels - 1; i++) {
-            setTimeout(HandleWins(++winCount), 2000);
-        }
+        AutoPlay();
+
+        //*** a solution for automtic values climbing the steps meter:
+
+        //$('#inf').prop('disabled', true);
+        //$('#autoPlay').prop('disabled', true);
+        //$('#autoPlay').css('opacity', 0.7);
+        //$('.clrBtn').prop('disabled', true);
+        //$('#redBtn').attr('src', 'images/Red_disabled.png');
+        //$('#blackBtn').attr('src', 'images/Black_disabled.png');
+        //for (var i = 0; i < gameLevels - 1; i++) {
+        //    setTimeout(HandleWins(++winCount), 2000);
+        //}
     });
 });
+
+//*** a manipulation to fix competability for all browsers:
+function CheckSizeAndFix() {
+    if ($(window).width() < 480) {
+        if ($('#main').attr('src').includes('PC')) {
+            $('#main').attr('src', 'images/RED_or_BLACK_Mobile_bg.jpg');
+            $('#hlpImg').attr('src', 'images/RED_or_BLACK_Mobile_Help.png');
+        }
+    }
+    else {
+        if ($('#main').attr('src').includes('Mobile')) {
+            $('#main').attr('src', 'images/RED_or_BLACK_PC_bg.jpg');
+            $('#hlpImg').attr('src', 'images/RED_or_BLACK_PC_Help.png');
+        }
+    }
+}
+
+function AutoPlay() {
+    var colors = ["red", "black"];
+    var color = colors[Math.floor(Math.random() * colors.length)];
+    color += 'Btn';
+    $('#' + color).trigger('mousedown');
+    $('#' + color).trigger('mouseup');
+    $('#autoPlay').delay(2000).fadeTo(0, 1, function () {
+        $(this).prop('disabled', false);
+        $(this).css('opacity', 'initial');
+    });
+    clicks--;
+}
 
 function GameLogic(color) {
     if (card.toLowerCase().includes(color)) {
@@ -89,17 +127,15 @@ function GameLogic(color) {
         $('#result').attr("src", "images/Card_V.png");
         $('#result').fadeIn(800);
         $('#card_container').delay(1000).fadeOut(800);
+        HandleWins(winCount);
     }
     else {
-        winCount = 1;
+        lives--;
         $('#result').attr("src", "images/Card_X.png");
         $('#result').fadeIn(800);
         $('#card_container').delay(1000).fadeOut(800);
+        HandleLives();
     }
-    console.clear();
-    console.log("wining = " + (winCount - 1));
-    HandleWins(winCount);
-    console.log("lives = " + lives);
 }
 
 function HandleWins(wins) {
@@ -112,6 +148,7 @@ function HandleWins(wins) {
                 $(window).width() < 480 ?
                 $(this).attr("src", "images/RED_or_BLACK_Mobile_step_0" + wins + ".png") :
                 $(this).attr("src", "images/RED_or_BLACK_PC_step_0" + wins + ".png");
+                $(this).css('display', 'inline-table')
             }).fadeIn(1000, function () {
                 if ($('#level').attr('src').includes('5')) {
                     $('#win-lose-modal').html
@@ -121,9 +158,6 @@ function HandleWins(wins) {
             });
             break;
         default:
-            lives--;
-            $('#level').delay(1000).fadeOut(800);
-            HandleLives();
             break;
     }
 }
@@ -142,8 +176,8 @@ function HandleLives() {
             $('#win-lose-modal').html
                 ('GAME OVER...<br /><input id="plyBtn" onclick="StartNewGame()" type="button" name="name" value="Play again" />');
             $('.end-game-modal').delay(1000).fadeIn(500);
-            winCount = 1;
-            lives = 2;
+
+
         default:
             break;
     }
@@ -151,6 +185,8 @@ function HandleLives() {
 
 function StartNewGame() {
     winCount = 1;
+    lives = 2;
+    clicks = 0;
     $('#lives').attr('src', 'images/lives_02.png');
     $(".clrBtn").prop('disabled', false);
     $('#inf').prop('disabled', false);
