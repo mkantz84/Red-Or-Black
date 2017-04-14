@@ -217,10 +217,6 @@ table {
         padding-top: initial;
     }
 
-    #main {
-        content: url("images/RED_or_BLACK_PC_bg.jpg");
-    }
-
     .clrBtn {
         width: 8%;
     }

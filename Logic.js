@@ -10,7 +10,6 @@ var cards =
      "Card_Red_04.png", "Card_Red_05.png", "Card_Red_06.png"];
 
 $(document).ready(function () {
-
     CheckSizeAndFix();
     $('.loader').delay(500).fadeTo(0, 1, function () {
         $('.loader').hide();
