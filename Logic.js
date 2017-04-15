@@ -94,15 +94,17 @@ $(document).ready(function () {
 //*** a manipulation to fix competability for all browsers:
 function CheckSizeAndFix() {
     if ($(window).width() < 480) {
-        if ($('#main').attr('src').includes('PC')) {
-            $('#main').attr('src', 'images/RED_or_BLACK_Mobile_bg.jpg');
+        if ($('.main-img img').attr('src').includes('PC')) {
+            $('.main-img img').attr('src', 'images/RED_or_BLACK_Mobile_bg.jpg');
             $('#hlpImg').attr('src', 'images/RED_or_BLACK_Mobile_Help.png');
+            $('#level').attr('src', "images/RED_or_BLACK_Mobile_step_0" + winCount + ".png");
         }
     }
     else {
-        if ($('#main').attr('src').includes('Mobile')) {
-            $('#main').attr('src', 'images/RED_or_BLACK_PC_bg.jpg');
+        if ($('.main-img img').attr('src').includes('Mobile')) {
+            $('.main-img img').attr('src', 'images/RED_or_BLACK_PC_bg.jpg');
             $('#hlpImg').attr('src', 'images/RED_or_BLACK_PC_Help.png');
+            $('#level').attr('src', "images/RED_or_BLACK_PC_step_0" + winCount + ".png");
         }
     }
 }
@@ -150,7 +152,7 @@ function HandleWins(wins) {
                 $(this).css('display', 'inline-table')
             }).fadeIn(1000, function () {
                 if ($('#level').attr('src').includes('5')) {
-                    $('#win-lose-modal').html
+                    $('.end-game-modal div').html
                         ('CONGRATULATIONS!!<br /><input id="plyBtn" onclick="StartNewGame()" type="button" name="name" value="Play again" />');
                     $('.end-game-modal').fadeIn(500);
                 }
@@ -172,7 +174,7 @@ function HandleLives() {
             $('#lives').delay(1000).fadeTo(0, 1, function () {
                 $('#lives').attr('src', 'images/lives_00.png');
             });
-            $('#win-lose-modal').html
+            $('.end-game-modal div').html
                 ('GAME OVER...<br /><input id="plyBtn" onclick="StartNewGame()" type="button" name="name" value="Play again" />');
             $('.end-game-modal').delay(1000).fadeIn(500);
 

@@ -115,11 +115,11 @@ table {
         background-position: bottom;
     }
 
-    #main {
-        visibility: hidden;
-        width: 100%;
-        vertical-align: bottom;
-    }
+        .main-img img {
+            visibility: hidden;
+            width: 100%;
+            vertical-align: bottom;
+        }
 
     .clrBtn {
         width: 28%;
@@ -162,14 +162,6 @@ table {
         display: none;
     }
 
-    #ldr {
-        width: 25%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-
     .loader {
         background: rgba(0, 0, 0, 0.7);
         width: 100%;
@@ -177,6 +169,14 @@ table {
         z-index: 10000;
         position: absolute;
     }
+
+        .loader img {
+            width: 25%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
 
     #hlpImg {
         position: absolute;
@@ -196,12 +196,12 @@ table {
         display: none;
     }
 
-    #win-lose-modal {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
+        .end-game-modal div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
 }
 
 @media (min-width: 480px) {
@@ -257,7 +257,7 @@ table {
         right: 43.5%;
     }
 
-    #ldr {
+    .loader img {
         width: 10%;
     }
 
