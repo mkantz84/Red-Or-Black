@@ -89,6 +89,30 @@ $(document).ready(function () {
         //    setTimeout(HandleWins(++winCount), 2000);
         //}
     });
+
+    $('.show-hide-rules').on('click', function () {
+        if ($('.rules-info').css('display') == 'none') {
+            $('.show-hide-rules .plus-minus').html('[-]');
+            $('.rules-info').show();
+        }
+        else {
+            $('.show-hide-rules .plus-minus').html('[+]');
+            $('.rules-info').slideUp();
+        }
+        window.scrollTo(0, document.body.clientHeight);
+    });
+
+    $('.show-hide-terms').on('click', function () {
+        if ($('.terms-info').css('display') == 'none') {
+            $('.show-hide-terms .plus-minus').html('[-]');
+            $('.terms-info').show();
+        }
+        else {
+            $('.show-hide-terms .plus-minus').html('[+]');
+            $('.terms-info').slideUp();
+        }
+        window.scrollTo(0, document.body.clientHeight);
+    });
 });
 
 //*** a manipulation to fix competability for all browsers:
