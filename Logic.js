@@ -22,7 +22,7 @@ $(document).ready(function () {
         }
         $('#selectedCard').attr("src", "");
         $('#result').attr("src", "").hide();
-        $('#card_container').show();
+        $('.card-container').show();
         card = cards[Math.floor(Math.random() * cards.length)];
         $('#selectedCard').attr("src", "images/cards/" + card);
         $('#selectedCard').css("visibility", "visible");
@@ -127,14 +127,14 @@ function GameLogic(color) {
         winCount++;
         $('#result').attr("src", "images/Card_V.png");
         $('#result').fadeIn(800);
-        $('#card_container').delay(1000).fadeOut(800);
+        $('.card-container').delay(1000).fadeOut(800);
         HandleWins(winCount);
     }
     else {
         lives--;
         $('#result').attr("src", "images/Card_X.png");
         $('#result').fadeIn(800);
-        $('#card_container').delay(1000).fadeOut(800);
+        $('.card-container').delay(1000).fadeOut(800);
         HandleLives();
     }
 }

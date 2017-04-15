@@ -69,7 +69,7 @@ table {
             color: #ff0000;
         }
 
-    html, body, #mainDiv {
+    html, body {
         height: 100%;
     }
 
@@ -100,7 +100,7 @@ table {
         z-index: 1;
     }
 
-    .mainDiv {
+    .main-div {
         z-index: 1;
         position: relative;
         background-color: #1b1818;
