@@ -2,7 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+/*
+    reset css
+*/
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,6 +58,15 @@ table {
 
 @media only screen {
 
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        background: #000;
+        position: relative;
+    }
+
     h1 {
         position: absolute;
         color: #ffffff;
@@ -70,15 +81,6 @@ table {
         h1 span {
             color: #ff0000;
         }
-
-    html, body {
-        height: 100%;
-    }
-
-    body {
-        background: #000;
-        position: relative;
-    }
 
     #autoPlay {
         width: 18%;
@@ -246,28 +248,32 @@ table {
 
     th {
         text-align: center;
-        font-weight:bold;
-    }
-    th,td{
-        padding:10px;
-        vertical-align:middle;
-    }
-    tr{
-
-    }
-    tr:nth-child(odd) {
-        background-color: #808080;
+        font-weight: bold;
     }
 
-    tr:nth-child(even) {
-        background-color: #3e3a3a;
+    th, td {
+        padding: 10px;
+        vertical-align: middle;
     }
+
+    tr {
+    }
+
+        tr:nth-child(odd) {
+            background-color: #808080;
+        }
+
+        tr:nth-child(even) {
+            background-color: #3e3a3a;
+        }
+
     td:nth-child(even) {
         color: #fafa08;
     }
 }
 
 @media (min-width: 480px) {
+
     h1 {
         padding-top: 2%;
         font-size: 1.5vw;
