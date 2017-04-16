@@ -54,7 +54,7 @@ table {
     border-spacing: 0;
 }
 
-
+/*game css*/
 
 @media only screen {
 
@@ -80,6 +80,22 @@ table {
 
         h1 span {
             color: #ff0000;
+        }
+
+    input[type=button] {
+        padding: 7px 10px;
+        border-radius: 10px;
+        margin: 4px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+    }
+
+        input[type=button]:hover {
+            background-color: #fafa08;
         }
 
     #autoPlay {
