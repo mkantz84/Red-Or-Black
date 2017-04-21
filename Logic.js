@@ -31,7 +31,7 @@ $(document).ready(function () {
     $('.clrBtn').bind("mouseup touchend", (function () {
         // disable auto play:
         if (clicks == 0) {
-            $('#autoPlay').prop('disabled', true).prop('title','auto play not allowed').prop('alt','auto play not allowed');
+            $('#autoPlay').prop('disabled', true).prop('title', 'auto play not allowed').prop('alt', 'auto play not allowed');
             $('#autoPlay').css('opacity', 0.7).css('cursor', 'not-allowed');
             clicks++;
         }
@@ -130,14 +130,18 @@ function CheckSizeAndFix() {
         if ($('.main-img img').attr('src').includes('PC')) {
             $('.main-img img').attr('src', 'images/RED_or_BLACK_Mobile_bg.jpg');
             $('#hlpImg').attr('src', 'images/RED_or_BLACK_Mobile_Help.png');
-            $('#level').attr('src', "images/RED_or_BLACK_Mobile_step_0" + winCount + ".png");
+            if (winCount > 1) {
+                $('#level').attr('src', "images/RED_or_BLACK_Mobile_step_0" + winCount + ".png");
+            }
         }
     }
     else {
         if ($('.main-img img').attr('src').includes('Mobile')) {
             $('.main-img img').attr('src', 'images/RED_or_BLACK_PC_bg.jpg');
             $('#hlpImg').attr('src', 'images/RED_or_BLACK_PC_Help.png');
-            $('#level').attr('src', "images/RED_or_BLACK_PC_step_0" + winCount + ".png");
+            if (winCount > 1) {
+                $('#level').attr('src', "images/RED_or_BLACK_PC_step_0" + winCount + ".png");
+            }
         }
     }
 }
