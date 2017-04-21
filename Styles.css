@@ -226,7 +226,9 @@ table {
     .show-hide {
         cursor: pointer;
         padding: 5px;
+        display:inline-block;
     }
+    
 
     .rules-info {
         padding-left: 15px;

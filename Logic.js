@@ -31,8 +31,8 @@ $(document).ready(function () {
     $('.clrBtn').bind("mouseup touchend", (function () {
         // disable auto play:
         if (clicks == 0) {
-            $('#autoPlay').prop('disabled', true);
-            $('#autoPlay').css('opacity', 0.7);
+            $('#autoPlay').prop('disabled', true).prop('title','auto play not allowed').prop('alt','auto play not allowed');
+            $('#autoPlay').css('opacity', 0.7).css('cursor', 'not-allowed');
             clicks++;
         }
         $('#selectedCard').attr("src", "");
@@ -42,7 +42,7 @@ $(document).ready(function () {
         $('#selectedCard').attr("src", "images/cards/" + card);
         $('#selectedCard').css("visibility", "visible");
         $('#selectedCard').css("transform", "rotateY(360deg)");
-        $(this).prop('disabled', true);
+        $('.clrBtn').prop('disabled', true);
     }));
 
     //*** catch mouse down of a card, change visibility and disable other card:
@@ -153,8 +153,8 @@ function AutoPlay() {
     $('#' + color).trigger('mouseup');
     // disabling the auto play button until the auto play logic and animation has done: 
     $('#autoPlay').delay(TIME_SET * 2).fadeTo(0, 1, function () {
-        $(this).prop('disabled', false);
-        $(this).css('opacity', 'initial');
+        $(this).prop('disabled', false).prop('title', 'auto play').prop('alt', 'auto play');
+        $(this).css('opacity', 'initial').css('cursor', 'auto');
     });
     clicks--;
 }
@@ -193,7 +193,7 @@ function HandleWins(wins) {
                 $(this).css('display', 'inline-table')
             }).fadeIn(TIME_SET, function () {
                 // if its the last level, show winning modal:
-                if ($('#level').attr('src').includes('5')) {
+                if ($('#level').attr('src').includes(GAME_LEVELS)) {
                     $('.end-game-modal div').html
                         ('CONGRATULATIONS!!<br /><input id="plyBtn" onclick="StartNewGame()" type="button" name="name" value="Play again" />');
                     $('.end-game-modal').delay(TIME_SET).fadeIn(TIME_SET / 2);
@@ -233,11 +233,11 @@ function StartNewGame() {
     $('#lives').attr('src', 'images/lives_02.png');
     $(".clrBtn").prop('disabled', false);
     $('#inf').prop('disabled', false);
-    $('#autoPlay').prop('disabled', false);
     $('#blackBtn').attr('src', 'images/Black_idle.png');
     $('#redBtn').attr('src', 'images/Red_idle.png');
     $('#level').attr("src", "").hide();
-    $('#autoPlay').css('opacity', 'initial');
+    $('#autoPlay').css('opacity', 'initial').css('cursor', 'auto');
+    $('#autoPlay').prop('disabled', false).prop('title', 'auto play').prop('alt', 'auto play');
     $('.end-game-modal').hide();
 }
 
